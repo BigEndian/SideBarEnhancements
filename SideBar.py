@@ -12,7 +12,7 @@ from send2trash import send2trash
 
 # needed for getting local app data path on windows
 if sublime.platform() == 'windows':
-	import _winreg
+	import winreg
 
 def disable_default():
 	default = sublime.packages_path()+'/Default/Side Bar.sublime-menu'
@@ -1281,8 +1281,8 @@ class SideBarOpenInBrowserCommand(sublime_plugin.WindowCommand):
 				commands = ['-a', 'Google Chrome', url]
 			elif sublime.platform() == 'windows':
 				# read local app data path from registry
-				aKey = _winreg.OpenKey(_winreg.HKEY_CURRENT_USER, r"Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders")
-				reg_value, reg_type = _winreg.QueryValueEx (aKey, "Local AppData")
+				aKey = winreg.OpenKey(winreg.HKEY_CURRENT_USER, r"Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders")
+				reg_value, reg_type = winreg.QueryValueEx (aKey, "Local AppData")
 
 				items = [
 					'%HOMEPATH%\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe'
@@ -1313,8 +1313,8 @@ class SideBarOpenInBrowserCommand(sublime_plugin.WindowCommand):
 				commands = ['-a', 'Chromium', url]
 			elif sublime.platform() == 'windows':
 				# read local app data path from registry
-				aKey = _winreg.OpenKey(_winreg.HKEY_CURRENT_USER, r"Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders")
-				reg_value, reg_type = _winreg.QueryValueEx (aKey, "Local AppData")
+				aKey = winreg.OpenKey(winreg.HKEY_CURRENT_USER, r"Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders")
+				reg_value, reg_type = winreg.QueryValueEx (aKey, "Local AppData")
 
 				items = [
 					'%HOMEPATH%\\AppData\\Local\\Google\\Chrome SxS\\Application\\chrome.exe'
