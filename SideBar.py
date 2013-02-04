@@ -4,11 +4,11 @@ import os
 
 import threading, time
 
-from sidebar.SideBarItem import SideBarItem
-from sidebar.SideBarSelection import SideBarSelection
-from sidebar.SideBarProject import SideBarProject
+from .sidebar.SideBarItem import SideBarItem
+from .sidebar.SideBarSelection import SideBarSelection
+from .sidebar.SideBarProject import SideBarProject
 
-from send2trash import send2trash
+from .send2trash import send2trash
 
 # needed for getting local app data path on windows
 if sublime.platform() == 'windows':
