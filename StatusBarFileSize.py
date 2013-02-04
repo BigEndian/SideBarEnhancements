@@ -1,6 +1,6 @@
 import sublime, sublime_plugin
-import hurry
-from hurry.filesize import size
+
+from .hurry.filesize import size
 from os.path import getsize
 
 s = sublime.load_settings('Side Bar.sublime-settings')
