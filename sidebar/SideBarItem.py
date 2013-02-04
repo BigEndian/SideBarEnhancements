@@ -62,12 +62,12 @@ class SideBarItem:
 
 				for path in data.keys():
 					path2 = expand_vars(path)
-					print '-------------------------------------------------------'
-					print 'searching:'
-					print path2.lower().replace('\\', '/').replace('\\', '/').replace('//', '/').replace('//', '/')
-					print 'in:'
-					print self.path().lower().replace('\\', '/').replace('\\', '/').replace('//', '/').replace('//', '/')
-					print '-------------------------------------------------------'
+					print('-------------------------------------------------------')
+					print('searching:')
+					print(path2.lower().replace('\\', '/').replace('\\', '/').replace('//', '/').replace('//', '/'))
+					print('in:')
+					print(self.path().lower().replace('\\', '/').replace('\\', '/').replace('//', '/').replace('//', '/'))
+					print('-------------------------------------------------------')
 					if self.path().lower().replace('\\', '/').replace('\\', '/').replace('//', '/').replace('//', '/').find(path2.lower().replace('\\', '/').replace('\\', '/').replace('//', '/').replace('//', '/')) == 0:
 						url = data[path][type]
 						if url:
