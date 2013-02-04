@@ -1,4 +1,5 @@
 import sublime, sublime_plugin
+import hurry
 from hurry.filesize import size
 from os.path import getsize
 
